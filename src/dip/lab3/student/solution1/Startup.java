@@ -12,6 +12,13 @@ package dip.lab3.student.solution1;
 public class Startup {
     public static void main(String[] args) {
         
-        Copier copier = new Copier();
+        Input input = new KeyboardInput();
+        Output output = new ConsoleOutput();
+        Copier copier = new Copier(input, output);
+        
+        copier.setLn(input);
+        copier.getLn();
+        
+        
     }
 }

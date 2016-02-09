@@ -13,7 +13,7 @@ public class GUIOutput implements Output {
 
     @Override
     public void outputLn(String ln) {
-        JOptionPane.showMessageDialog(null, ln);
+         JOptionPane.showMessageDialog(null, ln);
     }
     
 }
