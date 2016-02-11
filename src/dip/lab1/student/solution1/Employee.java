@@ -13,8 +13,7 @@ package dip.lab1.student.solution1;
  *
  * @author Juan Carrillo 
  */
-//I made the super class abstract because many kinds of
-//employees can earn a yearly bonus.
+
 public interface Employee {
 
     public abstract double getAnnualWages();

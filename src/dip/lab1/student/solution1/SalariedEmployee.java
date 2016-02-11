@@ -17,7 +17,6 @@ public class SalariedEmployee implements Employee {
     private double annualSalary;
     private double annualBonus;
     
-    /** default constructor. Is this the best way to go? */
     public SalariedEmployee( double annualSalary, double annualBonus) {
         this.annualSalary = annualSalary;
         this.setAnnualBonus(annualBonus);
