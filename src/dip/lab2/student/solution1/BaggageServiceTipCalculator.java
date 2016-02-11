@@ -8,9 +8,15 @@ package dip.lab2.student.solution1;
  *
  * @author Juan Carrillo
  */
-public class BaggageServiceTipCalculator extends TipCalculator {
-    private static final double MAX_BILL = 100.00;
-    private String billEntryErr;
+public class BaggageServiceTipCalculator implements TipCalculator {
+    private static double minBill = 0.00;
+    private static double maxBill = 100.00;
+    private static String billEntryErr = "Error: bill must be between " + minBill + " and "
+            + maxBill;
+    private static double goodRate = 0.20;
+    private static double fairRate = 0.15;
+    private static double poorRate = 0.10;
+    private ServiceQuality serviceQuality;
     private double baseTipPerBag;
     private int bagCount;
 
@@ -20,20 +26,24 @@ public class BaggageServiceTipCalculator extends TipCalculator {
 
         baseTipPerBag = 1.00; // set default value
     }
+    public final void setServiceRating(ServiceQuality q) {
+        // No need to validate because enums provide type safety!
+        serviceQuality = q;
+    }
 
     @Override
     public double getTip() {
         double tip = 0.00; // always initialize local variables
 
-        switch(this.getServiceQuality()) {
+        switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + this.getGoodRate());
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + this.getFairRate());
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + this.getPoorRate());
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
@@ -63,11 +73,4 @@ public class BaggageServiceTipCalculator extends TipCalculator {
         }
         this.baseTipPerBag = baseTipPerBag;
     }
-
-    @Override
-    public void setBillEntryErr() {
-        this.billEntryErr = "Error: bill must be between " + this.getMinBill() + " and "
-            + MAX_BILL;
-    }
-
 }

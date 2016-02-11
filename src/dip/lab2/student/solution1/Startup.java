@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  */
 public class Startup {
     public static void main(String[] args) {
-        TipCalculation calc = new TipCalculation();
+        TipService service = new TipService();
         TipCalculator[] tipCalc = {
             new BaggageServiceTipCalculator(ServiceQuality.FAIR, 5),
             new FoodServiceTipCalculator(ServiceQuality.GOOD, 20.00)
         };
         
         for (TipCalculator c : tipCalc){
-            System.out.println(calc.getTip(c));
+            System.out.println(service.getTip(c));
         }
     }
 }

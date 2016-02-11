@@ -15,7 +15,7 @@ public class KeyboardInput implements Input {
     @Override
     public String inputLn() {
         String line;
-        System.out.print("");
+        System.out.print("Enter text: ");
         line = keyboard.nextLine();
         return line;
     }
