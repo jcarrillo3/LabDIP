@@ -5,15 +5,18 @@
  */
 package dip.lab1.student.solution1;
 
+import javax.swing.JOptionPane;
+
 /**
  * An implementation sub-class of an Employee. These are low-level classes in
  * the DIP. Does it meet the rules of DIP? If not fix it.
  *
  * @author Juan Carrillo
  */
-public class HourlyEmployee extends Employee {
+public class HourlyEmployee implements Employee {
     private double hourlyRate;
     private double totalHrsForYear;
+    private double annualBonus;
 
     public HourlyEmployee(double hourlyRate, double totalHrsForYear, double annualBonus) {
         this.hourlyRate = hourlyRate;
@@ -40,6 +43,17 @@ public class HourlyEmployee extends Employee {
 
     public void setTotalHrsForYear(double totalHrsForYear) {
         this.totalHrsForYear = totalHrsForYear;
+    }
+            public final double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public final void setAnnualBonus(double annualBonus) {
+        if (annualBonus < 0){
+            JOptionPane.showMessageDialog(null, "Error: Invalid Entry");
+        } else {
+        this.annualBonus = annualBonus;
+        }
     }
 
 }

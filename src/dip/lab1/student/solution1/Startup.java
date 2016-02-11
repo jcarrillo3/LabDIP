@@ -22,7 +22,7 @@ public class Startup {
         //I tested the validation of my set bonus method by putting an invalid
         //number. The program still runs but they get an error message box and 
         //it doesnt affect the other variables.
-        HourlyEmployee emp1 = new HourlyEmployee(22.50, 2080, -40);
+        HourlyEmployee emp1 = new HourlyEmployee(20.00, 2080, 100);
         SalariedEmployee emp2 = new SalariedEmployee(45000, 1250);
         SalariedEmployee emp3 = new SalariedEmployee(90000,0);
 

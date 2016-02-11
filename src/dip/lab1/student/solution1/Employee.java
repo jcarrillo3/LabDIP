@@ -5,7 +5,6 @@
  */
 package dip.lab1.student.solution1;
 
-import javax.swing.JOptionPane;
 
 /**
  * The concrete super class of all employee types. What's wrong with this class?
@@ -16,20 +15,8 @@ import javax.swing.JOptionPane;
  */
 //I made the super class abstract because many kinds of
 //employees can earn a yearly bonus.
-public abstract class Employee {
-    private double annualBonus;
+public interface Employee {
 
     public abstract double getAnnualWages();
 
-    public final double getAnnualBonus() {
-        return annualBonus;
-    }
-
-    public final void setAnnualBonus(double annualBonus) {
-        if (annualBonus < 0){
-            JOptionPane.showMessageDialog(null, "Error: Invalid Entry");
-        } else {
-        this.annualBonus = annualBonus;
-        }
-    }
 }

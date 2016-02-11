@@ -5,14 +5,17 @@
  */
 package dip.lab1.student.solution1;
 
+import javax.swing.JOptionPane;
+
 /**
  * A simple implementation sub-class of Employee. These are low-level classes
  * in the DIP. Does it meet the rules of DIP? If not fix it.
  *
  * @author Juan Carrillo
  */
-public class SalariedEmployee extends Employee {
+public class SalariedEmployee implements Employee {
     private double annualSalary;
+    private double annualBonus;
     
     /** default constructor. Is this the best way to go? */
     public SalariedEmployee( double annualSalary, double annualBonus) {
@@ -29,6 +32,17 @@ public class SalariedEmployee extends Employee {
     }
     public void setAnnualSalary(double annualSalary) {
         this.annualSalary = annualSalary;
+    }
+        public final double getAnnualBonus() {
+        return annualBonus;
+    }
+
+    public final void setAnnualBonus(double annualBonus) {
+        if (annualBonus < 0){
+            JOptionPane.showMessageDialog(null, "Error: Invalid Entry");
+        } else {
+        this.annualBonus = annualBonus;
+        }
     }
 
     
