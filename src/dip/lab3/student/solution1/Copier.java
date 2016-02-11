@@ -19,10 +19,10 @@ public class Copier {
         this.output = output;
     }
     
-    public void setLn(Input input){
+    public void getLn(Input input){
         this.ln = input.inputLn();
     }
-    public void getLn(){
+    public void setLn(){
         output.outputLn(ln);
     }
 }

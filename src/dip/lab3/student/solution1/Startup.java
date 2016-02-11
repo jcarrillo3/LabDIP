@@ -16,8 +16,8 @@ public class Startup {
         Output output = new ConsoleOutput();
         Copier copier = new Copier(input, output);
         
-        copier.setLn(input);
-        copier.getLn();
+        copier.getLn(input);
+        copier.setLn();
         
         
     }
