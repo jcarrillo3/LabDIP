@@ -11,7 +11,7 @@ import java.io.*;
  *
  * @author Juan
  */
-public class FileInput implements Input {
+public class FileInput implements MessageInput {
     File file = new File(File.separator + "File1.txt");
     
     @Override

@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * @author Juan
  */
-public class KeyboardInput implements Input {
+public class KeyboardInput implements MessageInput {
     Scanner keyboard = new Scanner(System.in);
     
     @Override

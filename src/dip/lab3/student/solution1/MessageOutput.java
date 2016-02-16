@@ -7,10 +7,9 @@ package dip.lab3.student.solution1;
 
 /**
  *
- * @author Juan
+ * @author Juan Carrillo
  */
-public interface Input {
+public interface MessageOutput {
     
-    public abstract String inputLn();
-    
+    public abstract void outputLn(String ln);
 }
